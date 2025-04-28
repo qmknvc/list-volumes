@@ -11,6 +11,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "open": "^10.1.1",
+    "usb-detection": "^4.14.2"
   }
 }
