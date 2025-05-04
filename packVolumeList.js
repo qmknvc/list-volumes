@@ -23,7 +23,7 @@ const getDrives = async () => {
   const lines = rawVolumeList.split("\n");
   let volumeLines = lines.filter((line) => line.trim().startsWith("Volume")); // Array samo sa drive linijama
   volumeLines = volumeLines.map((e) => e.trimStart().slice(0, -1)); // Remova spaceova i \r
-  // volumeLines = volumeLines.map((e) => e.split(""));
+  // volumeLines = volumeLines.map((e) => e.split("")); // Splita u array sa svakim char
 
   const parsedData = parseDataFromDiskpart(volumeLines);
   const arrOfDrives = []
@@ -32,6 +32,7 @@ const getDrives = async () => {
     arrOfDrives.push(newDrive)
   });
 
+  // console.log(arrOfDrives)
   return arrOfDrives
 };
 

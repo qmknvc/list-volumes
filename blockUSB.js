@@ -11,8 +11,7 @@ const blockUSB = (driveLetter) => {
       else console.log(`Successfully hid Drive: ${driveLetter}:`, stdout);
     });
     exec(hideWindowCommand, (error, stdout, stderr) => {
-        if (error) console.error(`Error hiding window:`, error);
-        else console.log(`Successfully hid window:`, stdout);
-      });
+      if (error) console.error(`Error hiding window:`, error);
+    });
 }
 export { blockUSB }

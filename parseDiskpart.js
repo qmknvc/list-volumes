@@ -1,6 +1,6 @@
 // "Volume 0     D                       DVD-ROM         0 B  No Media           "
 // ["Volume 0", "D", null, null, "DVD-ROM", "0 B", "No Media", null]
-function parseDataFromDiskpart(inputArr) {
+const parseDataFromDiskpart = (inputArr) => {
   // Broj crta - od svake kolone plus dva spacea izmedju
   const fixedWidths = [12, 5, 13, 7, 12, 9, 11, 8];
   const result = [];

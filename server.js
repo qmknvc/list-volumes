@@ -1,5 +1,6 @@
 // Personal imports
 import { hideAllRemovableDrives, restoreAllRemovableDrives } from './handleDrive.js'
+import { getDrives } from "./packVolumeList.js";
 // Other imports
 import express from 'express';
 import usbDetect from 'usb-detection';
@@ -22,8 +23,10 @@ usbDetect.startMonitoring();
 
 usbDetect.on('add', async (device) => {
   console.log('USB device plugged in:', device);
-  // Open browser when device is plugged
-  const hiddenDrives = await hideAllRemovableDrives()
-  console.log(hiddenDrives)
+  // Hiding drives:
+  const drives = await getDrives()
+  await hideAllRemovableDrives(drives)
+
   open(`http://localhost:${port}`);
+  // restoreAllRemovableDrives(drives)
 });
