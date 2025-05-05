@@ -1,7 +1,6 @@
 // Personal function Imports
 import { blockUSB } from "./blockUSB.js";
 import { restoreUSB } from "./restoreUSB.js";
-import { getDrives } from "./packVolumeList.js";
 //
 const hideAllRemovableDrives = async (drives) => {
   console.log("Hiding drives...");
